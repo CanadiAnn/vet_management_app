@@ -6,4 +6,7 @@ class Vet:
         self.id = id
         self.animal_under_care = []
 
-    # def animal_under_care =     
+    def add_animal_under_care(self, animal):
+        animal_under_care.append(self.animal.name)    
+    
+

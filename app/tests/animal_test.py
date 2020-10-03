@@ -5,8 +5,8 @@ from models.animal import Animal
 class TestAnimal(unittest.TestCase):
 
     def setUp(self):
-        self.animal_1 = Animal('Boubou', 'August 4, 2008', 'cat', 'Ann', 'Kate')
-        self.animal_2 = Animal('Ti-Gars', 'November 17, 2012', 'fat cat', 'Lulu', 'Alex')
+        self.animal_1 = Animal('Boubou', 'August 4, 2008', 'cat', 'Ann')
+        self.animal_2 = Animal('Ti-Gars', 'November 17, 2012', 'fat cat', 'Lulu')
 
     def test_animal_has_name(self):
         self.assertEqual('Boubou', self.animal_1.name)
@@ -24,9 +24,7 @@ class TestAnimal(unittest.TestCase):
         self.assertEqual('Ann', self.animal_1.owner_id)
         self.assertEqual('Lulu', self.animal_2.owner_id)
 
-    def test_animal_has_vet(self):
-        self.assertEqual('Kate', self.animal_1.vet_id)
-        self.assertEqual('Alex', self.animal_2.vet_id)
+    
 
 
 
