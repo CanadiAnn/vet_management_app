@@ -19,7 +19,31 @@ def new_animal():
 # CREATE
 @animals_blueprint.route('/animals', methods=['POST'])
 def create_animal():
+    name = request.form['name']
+    dob = request.form['dob']
+    type = request.form ['type']
+    new_animal = Animal(name, dob, type)   # not sure here..
+    animal_repository.save(new_animal)
+    return redirect('/animals')
 
+# EDIT
+@animals_blueprint.route('/animals/<id>/edit')
+def edit_animal(id):
+    animal = animal_repository.select(id)
+    return render_template('animals/edit.html')
 
+# UPDATE    
+@animals_blueprint.route('/animals/<id>', methods=['POST'])
+def update_animal(id):
+    name = request.form['name']
+    dob = request.form['dob']
+    type = request.form ['type']
+    animal = Animal(name, dob, type, id)  # not sure here
+    animal_repository.update(animal)
+    return redirect('/animals')
 
-            # self, name, dob, type, owner, id = None):
+# DELETE
+@animals_blueprint.route('/animals/<id>/delete', methods=['POST'])
+def delete_human(id):
+    animal_repository.delete(id)
+    return redirect('/animals')    

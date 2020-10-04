@@ -1,8 +1,8 @@
 from flask import Flask, render_template
 
-from controllers.animal_controller import animals_blueprint
-from controllers.owner_controller import owners_blueprint
-from controllers.vet_controller import vets_blueprint
+from controllers.animals_controller import animals_blueprint
+from controllers.owners_controller import owners_blueprint
+from controllers.vets_controller import vets_blueprint
 
 app = Flask(__name__)
 
