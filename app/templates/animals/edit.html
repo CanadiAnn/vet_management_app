@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Edit Animal</h2>
+
+<section>
+    <form action='/animals/edit' method='POST'>
+        <div>
+            <label for='name'>Name:</label>
+            <select name='animal_id' id="animal">
+                {% for animal in animals %}
+                <option value='{{ animal.id }}'>
+                    {{ animal.name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+
+
+        <!-- <ul>
+            <li>
+                <label for='name'>Name:</label>
+                <input type='text' id='name' value='{{ animal.name }}'>
+                
+                {% for animals in animal %}
+                <option value='{{ animal.id }}'>{{ animal.name }}</option>'
+                {% endfor %}
+            </li>
+            <li>
+                <label for='dob'>DOB:</label>
+                <textarea id='dob' name='dob'></textarea>
+            </li>
+            <li>
+                <label for='type'>Type:</label>
+                <textarea id='type' name='type'></textarea>
+            </li>
+            <li> <!-- CREATE DROPDOWN LIST -->
+                <!-- <label for='owner'>Owner:</label>
+                <textarea id='owner' name='owner'></textarea>
+            </li>
+            <li> <!-- CREATE DROPDOWN LIST -->
+                <!-- <label for='vet'>Vet:</label>
+                <textarea id='vet' name='vet'></textarea>
+            </li>
+            
+            <li> <input class='btn-submit' type='submit' value='Edit'>
+            </li>
+        </ul> -->
+
+    </form>
+</section> 
+<!-- {% for animal in animals %}
+{% endfor %} -->
+{% endblock %}

@@ -1,0 +1,32 @@
+{%extends 'base.html' %}
+{% block content %}
+
+<h2>Create New Vet</h2>
+
+<section>
+    <form action='/vets/new' method='POST'>
+        <ul>
+            <li>
+                <label for='first_name'>First Name:</label>
+                <textarea id='first_name' name='first_name'></textarea>
+            </li>
+            <li>
+                <label for='last_name'>Last Name:</label>
+                <textarea id='last_name' name='last_name'></textarea>
+            </li>
+            <li>
+                <label for='license'>License Number:</label>
+                <textarea id='license' name='license'></textarea>
+            </li>
+            <li> 
+                <input class='btn-submit' type='submit' value='Create'>
+            </li>
+        </ul>
+    </form>
+</section>
+
+<!-- THIS LOWER SECTION DOESNT WORK NOT SURE WHY -->
+{% for vet in vets %}
+   
+{% endfor %}
+{% endblock %}

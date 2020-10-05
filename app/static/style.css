@@ -1,0 +1,23 @@
+* {
+    /* background: url('/');  */
+    /* background picture Photo by Anna Shvets from Pexels */ 
+    background-color: grey,
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+.navigation {
+    display: flex;
+    background-color: blue;
+
+}
+
+body {
+    
+}

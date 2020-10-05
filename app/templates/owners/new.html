@@ -1,0 +1,66 @@
+{%extends 'base.html' %}
+{% block content %}
+
+
+<nav>
+    <a href='/animals/new'>Create New Animal</a>      
+</nav>
+<section>
+    <form action='/owners/new' method='POST'>
+        <ul>
+            <li>
+                <label for='first_name'>First Name:</label>
+                <textarea id='first_name' name='first_name'></textarea>
+            </li>
+            <li>
+                <label for='last_name'>Last Name:</label>
+                <textarea id='last_name' name='last_name'></textarea>
+            </li>
+        </ul>    
+        <ul> 
+            <li>
+                <label for='phone_num_1'>Phone Number:</label>
+                <textarea id='phone_num_1' name='phone_num_1'></textarea>
+                <textarea id='phone_num_2' name='phone_num_2'></textarea>
+            </li>
+        </ul>   
+        <ul>  
+            <li> 
+                <label for='address'>Address:</label>
+                <textarea id='address' name='address'></textarea>
+            </li>
+            <li> <input class='btn-submit' type='submit' value='Create'>
+            </li>
+        </ul>
+
+    </form>
+</section>
+
+<!-- THIS LOWER SECTION DOESNT WORK NOT SURE WHY -->
+{% for owner in owners %}
+
+<section>
+    <p>TEST</p>
+    <form action='/animals/new' method='POST'>
+        <ul>
+            <li>
+                <label for='name'>Name:</label>
+                <textarea id='name' name='name'></textarea>
+                <input class='btn-submit' type='submit' value='Create'>
+            </li>
+        </ul>
+    </form>
+    <!-- <p>{{ animal.name }}</p>
+    <p>{{ animal.dob }}</p>
+    <p>{{ animal.type }}</p>
+    <p>{{ animal.owner }}</p>
+    <p>{{ animal.vet }}</p>
+    <p>{{ animal.treatment_plan }}</p> -->
+    <!-- <a href ='/animals/{{ animal.id }}/edit'>Edit</a>
+    <form action ='/animals/{{ animal.id }}/delete' method="POST">   
+        <input type = 'submit' value = 'Delete'>
+    </form>     -->
+</section>
+
+{% endfor %}
+{% endblock %}
