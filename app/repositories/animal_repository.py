@@ -13,7 +13,7 @@ def select_all():
     sql = 'SELECT * FROM animals'
     results = run_sql(sql)
     for result in results:
-        animal = Animal(result['name'], result['id'])
+        animal = Animal(result['name'], result['dob'], result['type'], result['owner_id'], result['vet_id'], result['id'])
         animals.append(animal)
     return animals
 
@@ -21,7 +21,7 @@ def select(id):
     sql = 'SELECT * FROM animals WHERE id = %s'
     values = [id]
     result = run_sql(sql, values)[0]
-    animal = Animal(result['name'], result['id'])
+    animal = Animal(result['name'], result['dob'], result['type'], result['owner'], result['vet'], result['id'])
     return animal
 
 def delete_all():

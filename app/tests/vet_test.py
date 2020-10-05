@@ -22,6 +22,9 @@ class TestVet(unittest.TestCase):
         self.assertEqual(10009876,self.vet_2.license)
 
     def test_add_animal_under_care(self):
-        animal = Animal('Brasco', 'March 23, 2015', 'dog', 'Vanessa')
+        animal = Animal('Brasco', 'March 23, 2015', 'dog', 3, 2, 'treatment_1')
         self.assertEqual('Brasco', animal.name)    
 
+    # def test_add_treatment_plan(self):
+    #     animal = Animal('Brasco', 'March 23, 2015', 'dog', 3, 2, 'treatment_1')
+    #     self.assertEqual('Brasco', animal.name)   

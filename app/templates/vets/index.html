@@ -1,0 +1,20 @@
+{%extends 'base.html' %}
+{% block content %}
+
+<h2>Vets</h2>
+
+{% for vet in vets %}
+
+<section>
+    <p>{{ vet.first_name }}</p>
+    <p>{{ vet.last_name }}</p>
+    <p>{{ vet.license }}</p>
+    <p>{{ vet.animal_under_care }}</p>
+    <a href ='/vets/{{ vet.id }}/edit'>Edit</a>
+    <form action ='/vets/{{ vet.id }}/delete' method="POST">   
+        <input type = 'submit' value = 'Delete'>
+    </form>    
+</section>
+
+{% endfor %}
+{% endblock %}

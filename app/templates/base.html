@@ -6,6 +6,9 @@
     <!-- <link rel='stylesheet' href='{{ url_for('static', filename = 'css/style.css') }}'>' -->
 </head>
 <body>
+<head>
+    <a href = '/'><h1>Feline Good Vet Practice</h1></a>
+</head>    
 <main class-'navigation'>
     <nav>
         <ul>
@@ -20,6 +23,11 @@
             </li>
         </ul>
     </nav>
+    <section id='content'>
+        {% block content %}
+        
+        {% endblock %}
+    </section>
 </main>
 </body>
 </html>

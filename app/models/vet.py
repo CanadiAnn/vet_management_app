@@ -9,4 +9,9 @@ class Vet:
     def add_animal_under_care(self, animal):
         animal_under_care.append(self.animal.name)    
     
+    # def count_animal_under_care(self):
+    #     return len(self.animal_under_care)
+
+    
+
 
