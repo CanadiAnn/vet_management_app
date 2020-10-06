@@ -4,7 +4,7 @@
 <h2>Create New Animal</h2>
 
 <section>
-    <form action='/animals/new' method='POST'>
+    <form action='/animals/new' method='post'>
         <ul>
             <li>
                 <label for='name'>Name:</label>
@@ -12,6 +12,7 @@
             </li>
             <li>
                 <label for='dob'>DOB:</label>
+                <p>(format DD/MM/YYYY)</p>
                 <textarea id='dob' name='dob'></textarea>
             </li>
             <li>
@@ -25,15 +26,20 @@
                     <option value='rabbit'>Rabbit</option>
                 </select>
             </li>
-            <li> <!-- CREATE DROPDOWN LIST -->
-                <label for='owner'>Owner:</label>
-                <textarea id='owner' name='owner'></textarea>
-            </li>
-            <li> <!-- CREATE DROPDOWN LIST / not working :,( -->
+            <li>
+                <label for='owner-select'>Owner:</label>
+                <select id='owner-select' name='owner_id'>
+                    {% for owner in all_owners %}
+                        <option value='{{ owner.id }}'>{{ owner.first_name }}</option>
+                    {% endfor %}
+                </select>
+                </li>
+            <li>
                 <label for='vet-select'>Vet:</label>
-                <select name='vet' id='vet-select'>
-                    <option value=' '>--Please choose an option--</option>
-                    <option value='first_name.vet'></option>
+                <select id='vet-select' name='vet_id'>
+                    {% for vet in all_vets %}
+                        <option value='{{ vet.id }}'>{{ vet.first_name }}</option>
+                        {% endfor %}
                 </select>
             </li>
             

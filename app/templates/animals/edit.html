@@ -5,50 +5,32 @@
 
 <section>
     <form action='/animals/edit' method='POST'>
-        <div>
-            <label for='name'>Name:</label>
-            <select name='animal_id' id="animal">
-                {% for animal in animals %}
-                <option value='{{ animal.id }}'>
-                    {{ animal.name }}
-                </option>
-                {% endfor %}
-            </select>
-        </div>
-
-
-        <!-- <ul>
+       
+        <ul>
             <li>
                 <label for='name'>Name:</label>
-                <input type='text' id='name' value='{{ animal.name }}'>
-                
-                {% for animals in animal %}
-                <option value='{{ animal.id }}'>{{ animal.name }}</option>'
-                {% endfor %}
+                <textarea id='name' name='name'></textarea>
             </li>
             <li>
                 <label for='dob'>DOB:</label>
                 <textarea id='dob' name='dob'></textarea>
             </li>
-            <li>
-                <label for='type'>Type:</label>
+            <li>  <!--WOULD NOT CHANGE-->
+                <label for='type'>Type:</label> 
                 <textarea id='type' name='type'></textarea>
             </li>
-            <li> <!-- CREATE DROPDOWN LIST -->
-                <!-- <label for='owner'>Owner:</label>
+            <li>  <!--NOT LIKELY TO CHANGE/DROPDOWN-->
+                <label for='owner'>Owner:</label>
                 <textarea id='owner' name='owner'></textarea>
             </li>
-            <li> <!-- CREATE DROPDOWN LIST -->
-                <!-- <label for='vet'>Vet:</label>
+            <li>  <!--DROPDOWN-->
+                <label for='vet'>Vet:</label>
                 <textarea id='vet' name='vet'></textarea>
             </li>
-            
-            <li> <input class='btn-submit' type='submit' value='Edit'>
-            </li>
-        </ul> -->
-
+            <input class='btn-submit' type='submit' value='Edit'>
+        </ul>
     </form>
-</section> 
-<!-- {% for animal in animals %}
-{% endfor %} -->
+</section>    
+{% for animal in animals %}    
+{% endfor %}
 {% endblock %}

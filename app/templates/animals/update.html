@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Add Treatment Notes</h2>
+
+{% for animal in animals %}
+
+<section>
+    <p>{{ animal.name }}</p>
+    <p>{{ animal.dob }}</p>
+    <p>{{ animal.type }}</p>
+    <p>{{ animal.owner }}</p>
+    <p>{{ animal.vet }}</p>
+    <ul>
+        <li>
+            <label for='treatment_notes'>Treatment Notes:</label>
+            <textarea id='treatment_notes' name='treatment_notes'></textarea>
+        </li>
+    </ul>    
+</section>
+
+{% endfor %}
+{% endblock %}    
