@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Edit Vet</h2>
+
+<section>
+    <form action='/vets/{{vet.id}}' method='post'>
+        <ul>
+            <li>
+                <label for='first_name'>First Name:</label>
+                <input type='text' id='first_name' name='first_name' value='{{vet.first_name}}'>
+            </li>
+            <li>
+                <label for='last_name'>Last Name:</label>
+                <input type='text' id='last_name' name='last_name' value='{{vet.last_name}}'>
+            </li>
+            <li> 
+                <label for='license'>License Number:</label> 
+                <input type='text' id='license' name='license' value='{{vet.license}}'>
+            </li>
+            <li>
+                <input class='btn-submit' type='submit' value='Edit'>
+            </li>       
+        </ul>
+    </form>
+</section>    
+{% for vet in vets %}    
+{% endfor %}
+{% endblock %}

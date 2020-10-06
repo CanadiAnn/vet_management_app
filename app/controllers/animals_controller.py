@@ -14,42 +14,43 @@ def animals():
     animals = animal_repository.select_all()
     return render_template('animals/index.html', animals = animals)
 
-# NEW
+# NEW / CREATE NEW ANIMAL
 @animals_blueprint.route('/animals/new', methods=['GET'])
 def new_animal():
     owners = owner_repository.select_all()
     vets = vet_repository.select_all()
     return render_template('animals/new.html', all_owners = owners, all_vets = vets)
-
-# CREATE
+    
+    
+# CREATE - POST
 @animals_blueprint.route('/animals', methods=['POST'])
 def create_animal():
     name = request.form['name']
     dob = request.form['dob']
-    type = request.form ['type']
-    owners = owner_repository.select_all()
-    vets = vet_repository.select_all()
-    new_animal = Animal(name, dob, type)   # not sure here..
-    animal_repository.save(new_animal)
+    type = request.form['type']
+    owner_id = request.form['owner_id']
+    vet_id = reqiest.form['vet_id']
+    animal = Animal(name, dob, type, owner_id, vet_id)
+    animal_repository.save(animal)
     return redirect('/animals')
 
+
 # EDIT
-@animals_blueprint.route('/animals/<id>/edit')
+@animals_blueprint.route('/animals/<id>/edit', methods=['GET'])
 def edit_animal(id):
-    animal = animal_repository.select_all()
-    # owner = owner_repository.select(id)
-    # vet = vet_repository.select(id)
-    return render_template('animals/edit.html')
+    animal = animal_repository.select(id)
+    owners = owner_repository.select_all()
+    vets = vet_repository.select_all()
+    return render_template('animals/edit.html', animal=animal, all_owners = owners, all_vets = vets)
 
 # UPDATE -- ADD TREATMENT NOTES 
-# @animals_blueprint.route('/animals/<id>/update')
-# def update_animal(id):
-    # name = request.form['name']
-    # dob = request.form['dob']
-    # type = request.form ['type']
-    # animal = Animal(name, dob, type, id)  # not sure here
-    # animal_repository.update(animal)
-    # return redirect('/animals')
+@animals_blueprint.route('/animals/<id>/update', methods=['GET'])
+def update_animal(id):
+    animal = animal_repository.select(id)
+    owner = owner_repository.select(id)
+    vet = vet_repository.select(id)
+    animal_repository.update(animal)
+    return render_template('/animals/update.html', animal=animal, owner=owner, vet=vet)
 
 # DELETE
 @animals_blueprint.route('/animals/<id>/delete', methods=['POST'])

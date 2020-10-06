@@ -3,21 +3,43 @@
 
 <h2>Add Treatment Notes</h2>
 
-{% for animal in animals %}
-
 <section>
-    <p>{{ animal.name }}</p>
-    <p>{{ animal.dob }}</p>
-    <p>{{ animal.type }}</p>
-    <p>{{ animal.owner }}</p>
-    <p>{{ animal.vet }}</p>
     <ul>
         <li>
+            <label for='name'>Name:</label>
+            <p>{{animal.name}}</p>
+        </li>
+        <li>
+            <label for='dob'>DOB:</label>    
+            <p>{{ animal.dob }}</p>
+        </li>
+        <li>  
+            <label for='type'>Type:</label> 
+            <p>{{ animal.type }}</p>
+        </li> 
+        <li>
+            <label for='owner'>Owner:</label>   
+            <p>{{ owner.first_name }} {{ owner.last_name }}</p>
+        </li>
+        <li>
+            <label for='vet'>Vet:</label>      
+            <p>{{ vet.first_name }} {{  vet.last_name }}</p>
+        </li>
+        <li>
+            <label for='treatment_date'>Treatment Date:</label>
+            <p>(format DD/MM/YYYY)</p>
+            <textarea id='treatment_date' name='treatment_date'></textarea>
+        </li>     
+        <li>
             <label for='treatment_notes'>Treatment Notes:</label>
-            <textarea id='treatment_notes' name='treatment_notes'></textarea>
+            <textarea id='treatment_notes' name='treatment_notes' rows='10' columns='10'></textarea>
+        </li>
+        <li><input class='btn-submit' type='submit' value='Add Note'>
         </li>
     </ul>    
 </section>
+
+{% for animal in animals %}
 
 {% endfor %}
 {% endblock %}    

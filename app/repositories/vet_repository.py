@@ -21,7 +21,7 @@ def select(id):
     sql = 'SELECT * FROM vets WHERE id = %s'
     values = [id]
     result = run_sql(sql, values)[0]
-    vet = vet(result['first_name'], result['last_name'], result['license'], result['id'])
+    vet = Vet(result['first_name'], result['last_name'], result['license'], result['id'])
     return vet
 
 def delete_all():

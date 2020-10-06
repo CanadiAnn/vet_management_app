@@ -9,16 +9,35 @@
 {% for owner in owners %}
 
 <section>
-    <p>{{ owner.first_name }}</p>
-    <p>{{ owner.last_name }}</p>
-    <p>{{ owner.phone_num_1 }}</p>
-    <p>{{ owner.phone_num_2 }}</p>
-    <p>{{ owner.address }}</p>
-    <p>{{ owner.animal }}</p>
-    <a href ='/owners/{{ owner.id }}/edit'>Edit</a>
-    <form action ='/owners/{{ owner.id }}/delete' method="POST">   
-        <input type = 'submit' value = 'Delete'>
-    </form>    
+    <ul>
+        <li>
+            <label for='first_name'>Fist Name:</label>
+            <p>{{ owner.first_name }}</p>
+        </li>
+        <li>
+            <label for='last_name'>Last Name:</label>
+            <p>{{ owner.last_name }}</p>
+        </li>
+        <li>
+            <label for='phone_num_1'>Phone Number:</label>
+            <p>{{ owner.phone_num_1 }} {{ owner.phone_num_2 }}</p>
+        </li>
+        <li> 
+            <label for='address'>Address:</label> 
+            <p>{{ owner.address }}</p>
+        </li>
+        <li> 
+            <label for='animals'>Animal(s):</label>     
+            <p>{{ owner.animal }}</p>
+        </li>    
+        <li>  
+            <form action='/owners/{{ owner.id }}/edit' method="POST">  
+            <input type='submit' value='Edit'></form>
+    
+            <form action='/owners/{{ owner.id }}/delete' method="POST">   
+            <input type='submit' value='Delete'></form> 
+        </li>        
+    </ul>   
 </section>
 
 {% endfor %}

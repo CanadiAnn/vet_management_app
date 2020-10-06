@@ -9,14 +9,27 @@
 {% for vet in vets %}
 
 <section>
-    <p>{{ vet.first_name }}</p>
-    <p>{{ vet.last_name }}</p>
-    <p>{{ vet.license }}</p>
-    <p>{{ vet.animal_under_care }}</p>
-    <a href ='/vets/{{ vet.id }}/edit'>Edit</a>
-    <form action ='/vets/{{ vet.id }}/delete' method="POST">   
-        <input type = 'submit' value = 'Delete'>
-    </form>    
+    <ul>
+        <li>
+            <label for='first_name'>First Name:</label>
+            <p>{{ vet.first_name }}</p>
+        </li>
+        <li>
+            <label for='last_name'>Last Name:</label>
+            <p>{{ vet.last_name }}</p>
+        </li>
+        <li>
+            <label for='license'>License Number:</label> 
+            <p>{{ vet.license }}</p>
+        </li>
+        <li>  
+            <form action='/vets/{{ vet.id }}/edit' method="POST">  
+            <input type='submit' value='Edit'></form>
+
+            <form action='/vets/{{ vet.id }}/delete' method="POST">   
+            <input type='submit' value='Delete'></form> 
+        </li>     
+    </ul>   
 </section>
 
 {% endfor %}
