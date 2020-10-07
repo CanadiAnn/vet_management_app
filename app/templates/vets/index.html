@@ -2,6 +2,7 @@
 {% block content %}
 
 <h2>Vets</h2>
+
 <nav>
     <a href='/vets/new'>Create New Vet</a>      
 </nav>
@@ -23,7 +24,7 @@
             <p>{{ vet.license }}</p>
         </li>
         <li>  
-            <form action='/vets/{{ vet.id }}/edit' method="POST">  
+            <form action='/vets/{{ vet.id }}/edit' method="GET">  
             <input type='submit' value='Edit'></form>
 
             <form action='/vets/{{ vet.id }}/delete' method="POST">   

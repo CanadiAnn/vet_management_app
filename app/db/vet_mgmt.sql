@@ -47,9 +47,9 @@ INSERT INTO vets (first_name, last_name, license) VALUES ('Alex', 'Padmore', 100
 
 -- ANIMAL DB
 
-INSERT INTO animals (name, dob, type, owner_id, vet_id, treatment_notes) VALUES ('Boubou', '4/08/2008', 'cat', 1, 1, 'test1' );
-INSERT INTO animals (name, dob, type, owner_id, vet_id, treatment_notes) VALUES ('Ti-Gars', '17/11/2012', 'fat cat', 2, 1, 'test2');
-INSERT INTO animals (name, dob, type, owner_id, vet_id, treatment_notes) VALUES ('Brasco', '23/03/2015', 'dog', 3, 2, 'test3');
+INSERT INTO animals (name, dob, type, owner_id, vet_id) VALUES ('Boubou', '4/08/2008', 'cat', 1, 1);
+INSERT INTO animals (name, dob, type, owner_id, vet_id) VALUES ('Ti-Gars', '17/11/2012', 'fat cat', 2, 1);
+INSERT INTO animals (name, dob, type, owner_id, vet_id) VALUES ('Brasco', '23/03/2015', 'dog', 3, 2);
 
 -- SELECT * FROM animals;
    

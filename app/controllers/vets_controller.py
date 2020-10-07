@@ -6,44 +6,47 @@ import repositories.vet_repository as vet_repository
 vets_blueprint = Blueprint('vets', __name__)
 
 # INDEX
-@vets_blueprint.route('/vets')
+@vets_blueprint.route('/vets', methods=['GET'])
 def vets():
     vets = vet_repository.select_all()
     return render_template('vets/index.html', vets = vets)
 
-# NEW
-@vets_blueprint.route('/vets/new')
+
+# NEW / CREATE NEW VET
+@vets_blueprint.route('/vets/new', methods=['GET'])
 def new_vet():
     return render_template('vets/new.html')
 
-# CREATE
+
+# CREATE / POST NEW VET
 @vets_blueprint.route('/vets', methods=['POST'])
 def create_vet():
-    first_name = request.form['first name']
-    last_name = request.form['last name']
-    license = request.form ['license']
-    new_vet = vet(first_name, last_name, license, id)   # not sure here..
-    vet_repository.save(new_vet)
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    license = request.form['license']
+    vet = Vet(first_name, last_name, license)
+    vet_repository.save(vet)
     return redirect('/vets')
 
-# EDIT
-@vets_blueprint.route('/vets/<id>/edit')
+
+# EDIT - pull the form to make a change
+@vets_blueprint.route('/vets/<id>/edit', methods=['GET']) #works with a POST WTF?
 def edit_vet(id):
     vet = vet_repository.select(id)
-    return render_template('vets/edit.html')
+    return render_template('vets/edit.html', vet=vet)
 
-# UPDATE    
+# UPDATE - post changes to the db    
 @vets_blueprint.route('/vets/<id>', methods=['POST'])
 def update_vet(id):
-    first_name = request.form['first name']
-    last_name = request.form['last name']
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
     license = request.form ['license']
-    vet = vet(first_name, last_name, license, id)  # not sure here
+    vet = Vet(first_name, last_name, license, id)
     vet_repository.update(vet)
     return redirect('/vets')
 
 # DELETE
 @vets_blueprint.route('/vets/<id>/delete', methods=['POST'])
-def delete_human(id):
+def delete_vet(id):
     vet_repository.delete(id)
     return redirect('/vets')    

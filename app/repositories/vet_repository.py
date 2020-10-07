@@ -1,9 +1,10 @@
 from db.run_sql import run_sql
+
 from models.vet import Vet
 
 def save(vet):
-    sql = 'INSERT INTO vets (name) VALUES (%s) RETURNING id'
-    values = [vet.name]
+    sql = 'INSERT INTO vets (first_name, last_name, license) VALUES (%s, %s, %s) RETURNING id'
+    values = [vet.first_name, vet.last_name, vet.license]
     results = run_sql(sql, values)
     id = results[0]['id']
     vet.id = id
@@ -34,6 +35,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(vet):
-    sql = 'UPDATE vets SET name = %s WHERE id = %s'
-    values = [vet.name, vet.id]
+    sql = 'UPDATE vets SET (first_name, last_name, license) = (%s, %s, %s) WHERE id = %s'
+    values = [vet.first_name, vet.last_name, vet.license, vet.id]
     run_sql(sql, values)                        

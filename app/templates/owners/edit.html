@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Edit Owner</h2>
+
+<section>
+    <form action='/owners/{{owner.id}}' method='post'>
+        <ul>
+            <li>
+                <label for='first_name'>First Name:</label>
+                <input type='text' id='first_name' name='first_name' value='{{owner.first_name}}'>
+            </li>
+            <li>
+                <label for='last_name'>Last Name:</label>
+                <input type='text' id='last_name' name='last_name' value='{{owner.last_name}}'>
+            </li>
+            <li> 
+                <label for='phone_num'>Phone Number:</label> 
+                <input type='text' id='phone_num_1' name='phone_num_1' value='{{owner.phone_num_1}}'>
+                <input type='text' id='phone_num_2' name='phone_num_2' value='{{owner.phone_num_2}}'>
+            </li>
+
+            <li> 
+                <label for='address'>Address:</label> 
+                <input type='text' id='address' name='address' value='{{owner.address}}'>
+            </li>
+            <li>
+                <input class='btn-submit' type='submit' value='Edit'>
+            </li>       
+        </ul>
+    </form>
+</section>    
+{% for vet in vets %}    
+{% endfor %}
+{% endblock %}

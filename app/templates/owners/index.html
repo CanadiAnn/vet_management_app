@@ -2,6 +2,7 @@
 {% block content %}
 
 <h2>Owners</h2>
+    
 <nav>
     <a href='/owners/new'>Create New Owner</a>      
 </nav>
@@ -31,7 +32,7 @@
             <p>{{ owner.animal }}</p>
         </li>    
         <li>  
-            <form action='/owners/{{ owner.id }}/edit' method="POST">  
+            <form action='/owners/{{ owner.id }}/edit' method="GET">  
             <input type='submit' value='Edit'></form>
     
             <form action='/owners/{{ owner.id }}/delete' method="POST">   

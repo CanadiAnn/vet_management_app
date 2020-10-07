@@ -1,23 +1,35 @@
 * {
-    /* background: url('/');  */
-    /* background picture Photo by Anna Shvets from Pexels */ 
-    background-color: grey,
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
-    padding: 0;
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
     text-decoration: none;
     list-style-type: none;
-
+    margin: 8px;
 }
 
 .navigation {
     display: flex;
-    background-color: blue;
+}
+
+
+body > header {
+    /* display: flex; */
+    color:#551A8B;
+    font-size: 28px;
+    display: flex;
+
+}
+.main-nav {
+    display: flex;
+    text-align: right; 
 
 }
 
-body {
+main-nav > a {
+    margin-right: 8px;
     
+}
+
+body {
+    font-family: 'Raleway', sans-serif; 
+    background-color:#C2FFC2;
+    color:#551A8B;
+
 }

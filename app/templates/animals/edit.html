@@ -35,6 +35,10 @@
                         {% endfor %}
                 </select>
             </li>
+            <li>
+                <label for='treatment_notes'>Treatment Notes:</label>
+                <textarea id='treatment_notes' name='treatment_notes' rows='10' columns='10'>{{animal.treatment_notes}}</textarea>
+            </li>
             <input class='btn-submit' type='submit' value='Edit'>
         </ul>
     </form>
