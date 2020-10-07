@@ -2,12 +2,13 @@
 <html>
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <title>Feline Good Vet Practice</title>
 </head>
 <body> 
     <header id='container'>
-        <a href = '/'><h1>Feline Good Vet Practice</h1></a>
+        <a href = '/'><h1 id='home'>Feline Good Vet Practice</h1></a>
         
         <nav>
             <ul class='main-nav'>
@@ -28,6 +29,7 @@
         
         {% endblock %}
         </section>
+   
     </main>
 </body>
 </html>

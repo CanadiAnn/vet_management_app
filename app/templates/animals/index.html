@@ -4,16 +4,17 @@
 <h2>Animals</h2>
 
 <nav>
-    <a href='/animals/new'>Create New Animal</a>      
+    <button>
+        <a href='/animals/new'>Create New Animal</a>  
+    </button>    
 </nav>
 
 {% for animal in animals %}
 
-<section>
+<section id='animal-index'>
     <ul>
         <li>
-            <label for='name'>Name:</label>
-            <p>{{ animal.name }}</p>
+            <label for='name'>Name:</label><p>{{ animal.name }}</p>
         </li>
         <li>
             <label for='dob'>DOB:</label>
@@ -39,9 +40,6 @@
         <li>  
             <form action='/animals/{{ animal.id }}/edit' method="GET">  
             <input type='submit' value='Edit'></form>
-
-
-    
             <form action='/animals/{{ animal.id }}/delete' method="POST">   
             <input type='submit' value='Delete'></form> 
         </li>   

@@ -1,35 +1,75 @@
 * {
-    text-decoration: none;
-    list-style-type: none;
     margin: 8px;
 }
 
-.navigation {
-    display: flex;
+li {
+    list-style-type: none;
+    
 }
 
+a {
+    text-decoration: none;
+}
 
 body > header {
-    /* display: flex; */
-    color:#551A8B;
+    font-family: 'Raleway', sans-serif; 
     font-size: 28px;
     display: flex;
+    align-items: center;
+    background-color: #7AF6CA;
+}
 
+body > header > a {
+    font-family: 'Amatic SC', cursive, sans-serif;
+    /* display: flex;
+    align-items: self-end; */
+    /* text-align: right; */  
+}
+
+.container > nav {
+    align-items: self-end;
+}
+.main-nav > li > a {
+    justify-content: flex-end;
 }
 .main-nav {
     display: flex;
-    text-align: right; 
-
+    /* flex-direction: row; */
+    justify-content: flex-end;
+    
 }
 
-main-nav > a {
-    margin-right: 8px;
-    
+a {
+    color:black;
+}
+
+a:active {
+    color: #551A8B;
+}
+
+
+.home:active {
+    color: #551A8B;
 }
 
 body {
     font-family: 'Raleway', sans-serif; 
-    background-color:#C2FFC2;
     color:#551A8B;
+}
 
+#welcome-msg {
+    text-align: center; 
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+#how-to {
+    text-align: center; 
+}
+
+img {
+    height: 300px;
+    width: auto; 
+    position: relative;
+    left: 65%;
 }
