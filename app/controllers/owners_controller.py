@@ -49,6 +49,6 @@ def update_owner(id):
 
 # DELETE
 @owners_blueprint.route('/owners/<id>/delete', methods=['POST'])
-def delete_human(id):
+def delete_owner(id):
     owner_repository.delete(id)
     return redirect('/owners')    
